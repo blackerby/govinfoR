@@ -1,6 +1,6 @@
 #' Given a GPO package id, return summary metadata for that package.
 #'
-#' @param package_id The Package Id. Ex: CREC-2018-01-04
+#' @param package_id String. The Package Id. Ex: CREC-2018-01-04
 #'
 #' @return A single row tibble.
 #' @export
@@ -27,6 +27,20 @@ package_summary <- function(package_id) {
     janitor::clean_names()
 }
 
+#' Given a GPO package id, get a list of granules associated with that package.
+#'
+#' @param package_id String. The Package Id. Ex: CREC-2018-01-04
+#' @param page_size Integer. The number of records to retrieve per request. Defaults to 20.
+#' @param offset_mark Indicates starting record for a given request.
+#' @param md5 String. md5 hash value of the html content file - can be used to identify changes in individual granules for the HOB and CRI collections.
+#' @param granule_class String. Filter the results by overarching collection-specific categories. Varies by collection.
+#'
+#' @return A tibble
+#' @export
+#'
+#' @examples
+#' set_govinfo_key("DEMO_KEY")
+#' package_granules("CREC-2018-01-04")
 package_granules <-
   function(package_id,
            page_size = 20,
