@@ -92,12 +92,17 @@ gpo_collections <-
         body |> tidyr::tibble(json = body$collections) |> tidyr::unnest_wider(json)
     }
 
-    df |>
-      janitor::clean_names() |>
-      dplyr::mutate(
-        last_modified = lubridate::ymd_hms(last_modified),
-        doc_class = as.factor(doc_class),
-        congress = as.integer(congress),
-        date_issued = as.Date(date_issued)
-      )
+    if (!is.null(collection)) {
+      df |>
+        janitor::clean_names() |>
+        dplyr::mutate(
+          last_modified = lubridate::ymd_hms(last_modified),
+          doc_class = as.factor(doc_class),
+          congress = as.integer(congress),
+          date_issued = as.Date(date_issued)
+        )
+    } else {
+      df |>
+        janitor::clean_names()
+    }
   }
