@@ -88,6 +88,41 @@ package_granules <-
       dplyr::mutate(granule_class = as.factor(granule_class))
   }
 
-package_granules_summary <- function() {
+#' Given a package id and a granule id, return a metadata summary for the granule.
+#'
+#' @param package_id String. The Package Id. Ex: CREC-2018-01-04
+#' @param granule_id String. The granule ID, e.g. CREC-2018-01-04-pt1-PgD7-2
+#'
+#' @return A single row tibble
+#' @export
+#'
+#' @examples
+#' set_govinfo_key("DEMO_KEY")
+#' package_granules_summary("CREC-2018-01-04", "CREC-2018-01-04-pt1-PgD7-2")
+package_granules_summary <- function(package_id, granule_id) {
+  req <- httr2::request(base_url()) |>
+    httr2::req_url_path_append("packages") |>
+    httr2::req_url_path_append(package_id) |>
+    httr2::req_url_path_append("granules") |>
+    httr2::req_url_path_append(granule_id) |>
+    httr2::req_url_path_append("summary") |>
+    httr2::req_headers(`X-Api-Key` = get_govinfo_key())
 
+  resp <- req |>
+    httr2::req_perform()
+
+  httr2::resp_body_json(resp) |>
+    t() |>
+    dplyr::as_tibble() |>
+    tidyr::unnest_wider(download) |>
+    dplyr::mutate_all(unlist) |>
+    janitor::clean_names() |>
+    dplyr::mutate(
+      collection_code = as.factor(collection_code),
+      granule_class = as.factor(granule_class),
+      sub_granule_class = as.factor(sub_granule_class),
+      doc_class = as.factor(doc_class),
+      last_modified = lubridate::ymd_hms(last_modified),
+      granule_date = as.Date(granule_date)
+    )
 }
