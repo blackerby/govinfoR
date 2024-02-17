@@ -29,6 +29,11 @@ package_summary <- function(package_id) {
 
 #' Given a GPO package id, get a list of granules associated with that package.
 #'
+#' The `offset` param provide by the API is not supported. GovInfo documentation indicates that it was to
+#' be deprecated in December, 2022, and though it is still available through the API, the `offsetMark` parameter
+#' is supported instead. Parameter descriptions are adapted from
+#' [GovInfo API documentation](https://api.govinfo.gov/docs/).
+#'
 #' @param package_id String. The Package Id. Ex: CREC-2018-01-04
 #' @param page_size Integer. The number of records to retrieve per request. Defaults to 20.
 #' @param offset_mark Indicates starting record for a given request.
