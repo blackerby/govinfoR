@@ -7,8 +7,8 @@
 #'
 #' @examples
 #' set_govinfo_key("DEMO_KEY")
-#' package_summary("CREC-2018-01-04")
-package_summary <- function(package_id) {
+#' gpo_package_summary("CREC-2018-01-04")
+gpo_package_summary <- function(package_id) {
   req <- httr2::request(base_url()) |>
     httr2::req_url_path_append("packages") |>
     httr2::req_url_path_append(package_id) |>
@@ -47,8 +47,8 @@ package_summary <- function(package_id) {
 #'
 #' @examples
 #' set_govinfo_key("DEMO_KEY")
-#' package_granules("CREC-2018-01-04")
-package_granules <-
+#' gpo_package_granules("CREC-2018-01-04")
+gpo_package_granules <-
   function(package_id,
            page_size = 20,
            offset_mark = "*",
@@ -103,8 +103,8 @@ package_granules <-
 #'
 #' @examples
 #' set_govinfo_key("DEMO_KEY")
-#' package_granules_summary("CREC-2018-01-04", "CREC-2018-01-04-pt1-PgD7-2")
-package_granules_summary <- function(package_id, granule_id) {
+#' gpo_package_granules_summary("CREC-2018-01-04", "CREC-2018-01-04-pt1-PgD7-2")
+gpo_package_granules_summary <- function(package_id, granule_id) {
   req <- httr2::request(base_url()) |>
     httr2::req_url_path_append("packages") |>
     httr2::req_url_path_append(package_id) |>

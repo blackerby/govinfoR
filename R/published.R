@@ -27,8 +27,8 @@
 #'
 #' @examples
 #' set_govinfo_key("DEMO_KEY")
-#' published(start_date = "2024-01-01", end_date = "2024-01-03", collection = c("BILLS", "BILLSTATUS"))
-published <-
+#' gpo_published(start_date = "2024-01-01", end_date = "2024-01-03", collection = c("BILLS", "BILLSTATUS"))
+gpo_published <-
   function(start_date,
            end_date = NULL,
            page_size = 10,

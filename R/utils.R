@@ -40,6 +40,11 @@ tomorrow <- function() {
   paste0(Sys.Date() + 1, "T00:00:00Z")
 }
 
+#' next_req
+#'
+#' A callback for use with httr2::req_perform_iterative
+#'
+#'
 next_req <- function(resp, req) {
   body <- httr2::resp_body_json(resp)
   next_url <- body$nextPage

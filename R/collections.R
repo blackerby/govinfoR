@@ -5,7 +5,7 @@
 #' 2022, and though it is still available through the API, the `offsetMark` parameter is supported instead. Parameter
 #' descriptions are adapted from [GovInfo API documentation](https://api.govinfo.gov/docs/).
 #'
-#' Calling `govinfo_collections()` without specifying a collection returns metadata about all collections.
+#' Calling `gpo_collections()` without specifying a collection returns metadata about all collections.
 #'
 #' @param collection The collectionCode that you want to retrieve (e.g. BILLS, CREC, FR, PLAW, USCOURTS)
 #' @param start_date ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z') Example: 2018-01-28T20:18:10Z
@@ -27,9 +27,9 @@
 #'
 #' @examples
 #' set_govinfo_key("DEMO_KEY")
-#' govinfo_collections(collection = "BILLS", start_date = yesterday())
-#' govinfo_collections()
-govinfo_collections <-
+#' gpo_collections(collection = "BILLS", start_date = yesterday())
+#' gpo_collections()
+gpo_collections <-
   function(collection = NULL,
            start_date = NULL,
            end_date = NULL,
