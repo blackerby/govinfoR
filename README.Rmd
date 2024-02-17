@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of govinfoR is to provide an easy way to interact with the United States Government Publishing Office (GPO) GovInfo API in R. It's currently a work in progress and not ready for serious use.
+`govinfoR` offers an easy way to access data provided by the [United States Government Publishing Office (GPO) GovInfo API](https://api.govinfo.gov/docs/) in R. It's currently in early development, but functions for all GET endpoints are available. The API's `search` endpoint, which as of this writing is in Public Preview, is outside the scope of this package at present.
 
 ## Installation
 
@@ -29,13 +29,24 @@ You can install the development version of govinfoR from [GitHub](https://github
 devtools::install_github("blackerby/govinfoR")
 ```
 
-## Example
+## Examples
 
-This is a basic example which shows you how to solve a common problem:
+This first example loads the package, sets the API key, and gets metadata about all 39 GovInfo collections.
 
-```{r example}
+```{r example_1}
 library(govinfoR)
 
 set_govinfo_key("DEMO_KEY")
+
+gpo_collections()
+```
+
+The following example demonstrates getting all records in the `BILLS` collection since midnight yesterday.
+
+<aside>The package provides three simple helpers to make it easier to specify dates as arguments to functions (`yesterday()`, `today()`, and `tomorrow()`)</aside>
+
+```{r example_2}
 gpo_collections(collection = "BILLS", start_date = yesterday())
 ```
+
+Examples of the use of other package functions are in the documentation.

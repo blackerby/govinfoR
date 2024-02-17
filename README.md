@@ -6,9 +6,12 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of govinfoR is to provide an easy way to interact with the
-United States Government Publishing Office (GPO) GovInfo API in R. It’s
-currently a work in progress and not ready for serious use.
+`govinfoR` offers an easy way to access data provided by the [United
+States Government Publishing Office (GPO) GovInfo
+API](https://api.govinfo.gov/docs/) in R. It’s currently in early
+development, but functions for all GET endpoints are available. The
+API’s `search` endpoint, which as of this writing is in Public Preview,
+is outside the scope of this package at present.
 
 ## Installation
 
@@ -20,17 +23,46 @@ You can install the development version of govinfoR from
 devtools::install_github("blackerby/govinfoR")
 ```
 
-## Example
+## Examples
 
-This is a basic example which shows you how to solve a common problem:
+This first example loads the package, sets the API key, and gets
+metadata about all 39 GovInfo collections.
 
 ``` r
 library(govinfoR)
 
 set_govinfo_key("DEMO_KEY")
+
+gpo_collections()
+#> # A tibble: 39 × 4
+#>    collection_code collection_name                  package_count granule_count
+#>    <chr>           <chr>                                    <int>         <int>
+#>  1 BILLS           Congressional Bills                     260096            NA
+#>  2 BILLSTATUS      Congressional Bill Status               147507            NA
+#>  3 BUDGET          United States Budget                       338          6759
+#>  4 CCAL            Congressional Calendars                   5516         88218
+#>  5 CDIR            Congressional Directory                    237         15024
+#>  6 CDOC            Congressional Documents                  24174          9580
+#>  7 CFR             Code of Federal Regulations               6090       7155023
+#>  8 CHRG            Congressional Hearings                   38974           285
+#>  9 CMR             Congressionally Mandated Reports           244            NA
+#> 10 COMPS           Statutes Compilations                     2449            NA
+#> # ℹ 29 more rows
+```
+
+The following example demonstrates getting all records in the `BILLS`
+collection since midnight yesterday.
+
+<aside>
+The package provides three simple helpers to make it easier to specify
+dates as arguments to functions (`yesterday()`, `today()`, and
+`tomorrow()`)
+</aside>
+
+``` r
 gpo_collections(collection = "BILLS", start_date = yesterday())
-#> ⠙ Iterating 7 done (3.2/s) | 2.2s
-#> ⠙ Iterating 8 done (2.9/s) | 2.7s
+#> ⠙ Iterating 7 done (2.9/s) | 2.4s
+#> ⠙ Iterating 8 done (2.8/s) | 2.9s
 #> # A tibble: 87 × 7
 #>    package_id          last_modified       package_link doc_class title congress
 #>    <chr>               <dttm>              <chr>        <fct>     <chr>    <int>
@@ -47,3 +79,5 @@ gpo_collections(collection = "BILLS", start_date = yesterday())
 #> # ℹ 77 more rows
 #> # ℹ 1 more variable: date_issued <date>
 ```
+
+Examples of the use of other package functions are in the documentation.
