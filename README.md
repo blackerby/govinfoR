@@ -53,16 +53,14 @@ gpo_collections()
 The following example demonstrates getting all records in the `BILLS`
 collection since midnight yesterday.
 
-<aside>
-The package provides three simple helpers to make it easier to specify
-dates as arguments to functions (`yesterday()`, `today()`, and
-`tomorrow()`)
-</aside>
+> The package provides three simple helpers to make it easier to specify
+> dates as arguments to functions (`yesterday()`, `today()`, and
+> `tomorrow()`)
 
 ``` r
 gpo_collections(collection = "BILLS", start_date = yesterday())
-#> ⠙ Iterating 7 done (2.9/s) | 2.4s
-#> ⠙ Iterating 8 done (2.8/s) | 2.9s
+#> ⠙ Iterating 5 done (2.4/s) | 2.1s
+#> ⠙ Iterating 8 done (2.4/s) | 3.3s
 #> # A tibble: 87 × 7
 #>    package_id          last_modified       package_link doc_class title congress
 #>    <chr>               <dttm>              <chr>        <fct>     <chr>    <int>
