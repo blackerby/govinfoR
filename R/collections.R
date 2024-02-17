@@ -74,7 +74,7 @@ govinfo_collections <-
     body <- httr2::resp_body_json(resp)
 
     if (!is.null(body$nextPage)) {
-      first_n = body$packages
+      first_n <-  body$packages
 
       next_req <- function(resp, req) {
         body <- httr2::resp_body_json(resp)
