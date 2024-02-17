@@ -74,7 +74,7 @@ govinfo_collections <-
     body <- httr2::resp_body_json(resp)
 
     if (!is.null(body$nextPage)) {
-      first_n <-  body$packages
+      first_n <- body$packages
 
       resps <- httr2::request(body$nextPage) |>
         httr2::req_headers(`X-Api-Key` = get_govinfo_key()) |>
