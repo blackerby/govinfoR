@@ -88,8 +88,7 @@ gpo_collections <-
 
       df <- dplyr::bind_rows(first_n, remaining_n)
     } else {
-      df <-
-        body |> tidyr::tibble(json = body$collections) |> tidyr::unnest_wider(json)
+      df <- tidyr::tibble(json = body$collections) |> tidyr::unnest_wider(json)
     }
 
     if (!is.null(collection)) {
