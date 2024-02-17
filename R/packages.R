@@ -77,7 +77,7 @@ package_granules <-
     if (!is.null(body$nextPage)) {
       resps <- httr2::request(body$nextPage) |>
         httr2::req_headers(`X-Api-Key` = get_govinfo_key()) |>
-        httr2::req_perform_iterative(next_req = next_req)
+        httr2::req_perform_iterative(next_req = next_req, max_reqs = Inf)
 
       remaining_n <- resps |> httr2::resps_data(function(resp) {
         body <- httr2::resp_body_json(resp)
