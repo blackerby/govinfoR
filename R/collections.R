@@ -92,13 +92,22 @@ govinfo_collections <-
 
       remaining_n <- resps |> httr2::resps_data(function(resp) {
         body <- httr2::resp_body_json(resp)
-        tidyr::tibble(json =
-                        body$packages) |>
+        tidyr::tibble(json = body$packages) |>
           tidyr::unnest_wider(json)
       })
 
-      dplyr::bind_rows(first_n, remaining_n)
+      df <- dplyr::bind_rows(first_n, remaining_n)
     } else {
-      body |> tidyr::tibble(json = body$collections) |> tidyr::unnest_wider(json)
+      df <-
+        body |> tidyr::tibble(json = body$collections) |> tidyr::unnest_wider(json)
     }
+
+    df |>
+      janitor::clean_names() |>
+      dplyr::mutate(
+        last_modified = lubridate::ymd_hms(last_modified),
+        doc_class = as.factor(doc_class),
+        congress = as.integer(congress),
+        date_issued = as.Date(date_issued)
+      )
   }

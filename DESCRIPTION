@@ -13,6 +13,8 @@ Imports:
     cli,
     dplyr,
     httr2,
+    janitor,
+    lubridate,
     tidyr,
     vctrs
 URL: https://github.com/blackerby/govinfoR
