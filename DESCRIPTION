@@ -1,12 +1,17 @@
 Package: govinfoR
-Title: What the Package Does (One Line, Title Case)
+Title: An api.govinfo.gov wrapper
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("William", "Blackerby", , "wmblackerby@gmail.com", role = c("aut", "cre"))
+Description: govinfoR provides functions for accessing data provied by the United States Goverment Publishing Office
+    GovInfo API.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
+Imports: 
+    cli,
+    dplyr,
+    httr2,
+    tidyr,
+    vctrs
