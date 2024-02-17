@@ -32,8 +32,10 @@ package_summary <- function(package_id) {
 #' @param package_id String. The Package Id. Ex: CREC-2018-01-04
 #' @param page_size Integer. The number of records to retrieve per request. Defaults to 20.
 #' @param offset_mark Indicates starting record for a given request.
-#' @param md5 String. md5 hash value of the html content file - can be used to identify changes in individual granules for the HOB and CRI collections.
-#' @param granule_class String. Filter the results by overarching collection-specific categories. Varies by collection.
+#' @param md5 String. md5 hash value of the html content file - can be used to identify changes
+#'    in individual granules for the HOB and CRI collections.
+#' @param granule_class String. Filter the results by overarching collection-specific categories.
+#'    Varies by collection.
 #'
 #' @return A tibble
 #' @export
@@ -68,16 +70,6 @@ package_granules <-
     df <- first_n <- body$granules
 
     if (!is.null(body$nextPage)) {
-      next_req <- function(resp, req) {
-        body <- httr2::resp_body_json(resp)
-        next_url <- body$nextPage
-        if (is.null(next_url)) {
-          return(NULL)
-        }
-        httr2::request(next_url) |>
-          httr2::req_headers(`X-Api-Key` = get_govinfo_key())
-      }
-
       resps <- httr2::request(body$nextPage) |>
         httr2::req_headers(`X-Api-Key` = get_govinfo_key()) |>
         httr2::req_perform_iterative(next_req = next_req)

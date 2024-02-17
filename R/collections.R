@@ -76,16 +76,6 @@ govinfo_collections <-
     if (!is.null(body$nextPage)) {
       first_n <-  body$packages
 
-      next_req <- function(resp, req) {
-        body <- httr2::resp_body_json(resp)
-        next_url <- body$nextPage
-        if (is.null(next_url)) {
-          return(NULL)
-        }
-        httr2::request(next_url) |>
-          httr2::req_headers(`X-Api-Key` = get_govinfo_key())
-      }
-
       resps <- httr2::request(body$nextPage) |>
         httr2::req_headers(`X-Api-Key` = get_govinfo_key()) |>
         httr2::req_perform_iterative(next_req = next_req)
