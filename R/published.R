@@ -1,17 +1,21 @@
 #' Retrieve documents based on official publication date.
 #'
-#' The following params correspond to those listed in the [GovInfo API documentation](https://api.govinfo.gov/docs/),
-#' but the `offset` param is not supported. GovInfo documentation indicates that it was to be deprecated in December,
-#' 2022, and though it is still available through the API, the `offsetMark` parameter is supported instead. Parameter
-#' descriptions are adapted from [GovInfo API documentation](https://api.govinfo.gov/docs/).
+#' The following params correspond to those listed in the
+#' [GovInfo API documentation](https://api.govinfo.gov/docs/), but the `offset` param is not
+#' supported. GovInfo documentation indicates that it was to be deprecated in December, 2022, and
+#' though it is still available through the API, the `offsetMark` parameter is supported instead.
+#' Parameter descriptions are adapted from [GovInfo API documentation](https://api.govinfo.gov/docs/).
 #'
-#' @param start_date ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z') Example: 2018-01-28T20:18:10Z
-#' @param end_date ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z') Example: 2018-01-28T20:18:10Z
+#' @param start_date ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z')
+#'    Example: 2018-01-28T20:18:10Z
+#' @param end_date ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z')
+#'    Example: 2018-01-28T20:18:10Z
 #' @param page_size The number of records to return for a given request.
 #' @param congress Filter by Congress, e.g., 116, 117
 #' @param doc_class Filter by collection-specific categories, which vary among collections.
 #' @param modified_since Request only packages modified since a given date/time.
-#'    ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z') Example: 2018-01-28T20:18:10Z
+#'    ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z')
+#'    Example: 2018-01-28T20:18:10Z
 #' @param bill_version Specific to the `BILLS` collection. Filter by bill text version code.
 #' @param court_code `USCOURTS`collection specific.
 #' @param court_type `USCOURTS` collection specific.
@@ -27,7 +31,11 @@
 #'
 #' @examples
 #' set_govinfo_key("DEMO_KEY")
-#' gpo_published(start_date = "2024-01-01", end_date = "2024-01-03", collection = c("BILLS", "BILLSTATUS"))
+#' gpo_published(
+#'   start_date = "2024-01-01",
+#'   end_date = "2024-01-03",
+#'   collection = c("BILLS", "BILLSTATUS")
+#' )
 gpo_published <-
   function(start_date,
            end_date = NULL,

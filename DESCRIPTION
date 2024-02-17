@@ -15,7 +15,6 @@ Imports:
     httr2,
     janitor,
     lubridate,
-    purrr,
     tidyr,
     vctrs
 URL: https://github.com/blackerby/govinfoR
