@@ -64,6 +64,7 @@ descriptions are adapted from \href{https://api.govinfo.gov/docs/}{GovInfo API d
 Calling \code{govinfo_collections()} without specifying a collection returns metadata about all collections.
 }
 \examples{
+set_govinfo_key("DEMO_KEY")
 govinfo_collections(collection = "BILLS", start_date = yesterday())
 govinfo_collections()
 }

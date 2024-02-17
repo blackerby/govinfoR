@@ -26,6 +26,7 @@
 #' @export
 #'
 #' @examples
+#' set_govinfo_key("DEMO_KEY")
 #' govinfo_collections(collection = "BILLS", start_date = yesterday())
 #' govinfo_collections()
 govinfo_collections <-
