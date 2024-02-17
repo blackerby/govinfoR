@@ -24,9 +24,11 @@ gpo_published(
 )
 }
 \arguments{
-\item{start_date}{ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z') Example: 2018-01-28T20:18:10Z}
+\item{start_date}{ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z')
+Example: 2018-01-28T20:18:10Z}
 
-\item{end_date}{ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z') Example: 2018-01-28T20:18:10Z}
+\item{end_date}{ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z')
+Example: 2018-01-28T20:18:10Z}
 
 \item{page_size}{The number of records to return for a given request.}
 
@@ -37,7 +39,8 @@ gpo_published(
 \item{bill_version}{Specific to the \code{BILLS} collection. Filter by bill text version code.}
 
 \item{modified_since}{Request only packages modified since a given date/time.
-ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z') Example: 2018-01-28T20:18:10Z}
+ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z')
+Example: 2018-01-28T20:18:10Z}
 
 \item{court_code}{\code{USCOURTS}collection specific.}
 
@@ -59,12 +62,17 @@ ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z') Example: 2018-
 A tibble
 }
 \description{
-The following params correspond to those listed in the \href{https://api.govinfo.gov/docs/}{GovInfo API documentation},
-but the \code{offset} param is not supported. GovInfo documentation indicates that it was to be deprecated in December,
-2022, and though it is still available through the API, the \code{offsetMark} parameter is supported instead. Parameter
-descriptions are adapted from \href{https://api.govinfo.gov/docs/}{GovInfo API documentation}.
+The following params correspond to those listed in the
+\href{https://api.govinfo.gov/docs/}{GovInfo API documentation}, but the \code{offset} param is not
+supported. GovInfo documentation indicates that it was to be deprecated in December, 2022, and
+though it is still available through the API, the \code{offsetMark} parameter is supported instead.
+Parameter descriptions are adapted from \href{https://api.govinfo.gov/docs/}{GovInfo API documentation}.
 }
 \examples{
 set_govinfo_key("DEMO_KEY")
-gpo_published(start_date = "2024-01-01", end_date = "2024-01-03", collection = c("BILLS", "BILLSTATUS"))
+gpo_published(
+  start_date = "2024-01-01",
+  end_date = "2024-01-03",
+  collection = c("BILLS", "BILLSTATUS")
+)
 }
