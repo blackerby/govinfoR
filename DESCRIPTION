@@ -15,3 +15,5 @@ Imports:
     httr2,
     tidyr,
     vctrs
+URL: https://github.com/blackerby/govinfoR
+BugReports: https://github.com/blackerby/govinfoR/issues
