@@ -1,5 +1,5 @@
 Package: govinfoR
-Title: A GovInfo API Wrapper
+Title: A 'GovInfo' API Wrapper
 Version: 0.0.1
 Authors@R: 
     person("William", "Blackerby", , "wmblackerby@gmail.com", role = c("aut", "cre", "cph"))
