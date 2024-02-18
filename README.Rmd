@@ -42,7 +42,7 @@ This first example loads the package, sets the API key, and gets metadata about 
 ```{r example_1}
 library(govinfoR)
 
-set_govinfo_key("DEMO_KEY")
+set_govinfo_key(get_govinfo_key())
 
 gpo_collections()
 ```

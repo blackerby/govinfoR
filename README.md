@@ -66,8 +66,8 @@ collection since midnight yesterday.
 
 ``` r
 gpo_collections(collection = "BILLS", start_date = yesterday())
-#> ⠙ Iterating 5 done (2.2/s) | 2.3s
-#> ⠙ Iterating 8 done (2.2/s) | 3.6s
+#> ⠙ Iterating 7 done (3.2/s) | 2.2s
+#> ⠙ Iterating 8 done (3/s) | 2.7s
 #> # A tibble: 87 × 7
 #>    package_id          last_modified       package_link doc_class title congress
 #>    <chr>               <dttm>              <chr>        <fct>     <chr>    <int>
