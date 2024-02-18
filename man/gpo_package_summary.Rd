@@ -16,6 +16,9 @@ A single row tibble.
 Given a GPO package id, return summary metadata for that package.
 }
 \examples{
+\dontshow{if (govinfoR::has_govinfo_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+
 set_govinfo_key(get_govinfo_key())
 gpo_package_summary("CREC-2018-01-04")
+\dontshow{\}) # examplesIf}
 }

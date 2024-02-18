@@ -1,9 +1,9 @@
 #' Retrieve GPO collections data
 #'
-#' The following params correspond to those listed in the [GovInfo API documentation](https://api.govinfo.gov/docs/),
+#' The following params correspond to those listed in the [GovInfo API documentation](https://api.govinfo.gov),
 #' but the `offset` param is not supported. GovInfo documentation indicates that it was to be deprecated in December,
 #' 2022, and though it is still available through the API, the `offsetMark` parameter is supported instead. Parameter
-#' descriptions are adapted from [GovInfo API documentation](https://api.govinfo.gov/docs/).
+#' descriptions are adapted from [GovInfo API documentation](https://api.govinfo.gov).
 #'
 #' Calling `gpo_collections()` without specifying a collection returns metadata about all collections.
 #'
@@ -26,10 +26,12 @@
 #' @return A tibble
 #' @export
 #'
-#' @examples
+#' @examplesIf govinfoR::has_govinfo_key()
+#'
 #' set_govinfo_key(get_govinfo_key())
 #' gpo_collections(collection = "BILLS", start_date = yesterday())
 #' gpo_collections()
+#'
 gpo_collections <-
   function(collection = NULL,
            start_date = NULL,

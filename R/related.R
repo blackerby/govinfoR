@@ -9,10 +9,12 @@
 #' @return A tibble.
 #' @export
 #'
-#' @examples
+#' @examplesIf govinfoR::has_govinfo_key()
+#'
 #' set_govinfo_key(get_govinfo_key())
 #' gpo_related("BILLS-116hr748enr")
 #' gpo_related("BILLS-116hr748enr", collection = "BILLS")
+#'
 gpo_related <-
   function(access_id,
            collection = NULL,

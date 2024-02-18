@@ -8,10 +8,10 @@
 
 `govinfoR` offers an easy way to access data provided by the [United
 States Government Publishing Office (GPO) GovInfo
-API](https://api.govinfo.gov/docs/) in R. It’s currently in early
-development, but functions for all GET endpoints are available. The
-API’s `search` endpoint, which as of this writing is in Public Preview,
-is outside the scope of this package at present.
+API](https://api.govinfo.gov) in R. It’s currently in early development,
+but functions for all GET endpoints are available. The API’s `search`
+endpoint, which as of this writing is in Public Preview, is outside the
+scope of this package at present.
 
 ## Installation
 
@@ -32,8 +32,8 @@ devtools::install_github("blackerby/govinfoR")
 
 ## Examples
 
-This first example loads the package, sets the API key, and gets
-metadata about all 39 GovInfo collections.
+This first example loads the package, sets the API key (gotten from the
+environment), and gets metadata about all 39 GovInfo collections.
 
 ``` r
 library(govinfoR)
@@ -67,7 +67,7 @@ collection since midnight yesterday.
 ``` r
 gpo_collections(collection = "BILLS", start_date = yesterday())
 #> ⠙ Iterating 7 done (3.2/s) | 2.2s
-#> ⠙ Iterating 8 done (3/s) | 2.7s
+#> ⠙ Iterating 8 done (3.1/s) | 2.6s
 #> # A tibble: 87 × 7
 #>    package_id          last_modified       package_link doc_class title congress
 #>    <chr>               <dttm>              <chr>        <fct>     <chr>    <int>

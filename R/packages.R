@@ -5,9 +5,11 @@
 #' @return A single row tibble.
 #' @export
 #'
-#' @examples
+#' @examplesIf govinfoR::has_govinfo_key()
+#'
 #' set_govinfo_key(get_govinfo_key())
 #' gpo_package_summary("CREC-2018-01-04")
+#'
 gpo_package_summary <- function(package_id) {
   req <- httr2::request(base_url()) |>
     httr2::req_url_path_append("packages") |>
@@ -32,7 +34,7 @@ gpo_package_summary <- function(package_id) {
 #' The `offset` param provide by the API is not supported. GovInfo documentation indicates that it was to
 #' be deprecated in December, 2022, and though it is still available through the API, the `offsetMark` parameter
 #' is supported instead. Parameter descriptions are adapted from
-#' [GovInfo API documentation](https://api.govinfo.gov/docs/).
+#' [GovInfo API documentation](https://api.govinfo.gov).
 #'
 #' @param package_id String. The Package Id. Ex: CREC-2018-01-04
 #' @param page_size Integer. The number of records to retrieve per request. Defaults to 20.
@@ -45,9 +47,11 @@ gpo_package_summary <- function(package_id) {
 #' @return A tibble
 #' @export
 #'
-#' @examples
+#' @examplesIf govinfoR::has_govinfo_key()
+#'
 #' set_govinfo_key(get_govinfo_key())
 #' gpo_package_granules("CREC-2018-01-04")
+#'
 gpo_package_granules <-
   function(package_id,
            page_size = 20,
@@ -101,9 +105,11 @@ gpo_package_granules <-
 #' @return A single row tibble
 #' @export
 #'
-#' @examples
+#' @examplesIf govinfoR::has_govinfo_key()
+#'
 #' set_govinfo_key(get_govinfo_key())
 #' gpo_package_granules_summary("CREC-2018-01-04", "CREC-2018-01-04-pt1-PgD7-2")
+#'
 gpo_package_granules_summary <- function(package_id, granule_id) {
   req <- httr2::request(base_url()) |>
     httr2::req_url_path_append("packages") |>

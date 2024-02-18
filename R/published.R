@@ -1,10 +1,10 @@
 #' Retrieve documents based on official publication date.
 #'
 #' The following params correspond to those listed in the
-#' [GovInfo API documentation](https://api.govinfo.gov/docs/), but the `offset` param is not
+#' [GovInfo API documentation](https://api.govinfo.gov), but the `offset` param is not
 #' supported. GovInfo documentation indicates that it was to be deprecated in December, 2022, and
 #' though it is still available through the API, the `offsetMark` parameter is supported instead.
-#' Parameter descriptions are adapted from [GovInfo API documentation](https://api.govinfo.gov/docs/).
+#' Parameter descriptions are adapted from [GovInfo API documentation](https://api.govinfo.gov).
 #'
 #' @param start_date ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z')
 #'    Example: 2018-01-28T20:18:10Z
@@ -30,13 +30,15 @@
 #' @return A tibble
 #' @export
 #'
-#' @examples
+#' @examplesIf govinfoR::has_govinfo_key()
+#'
 #' set_govinfo_key(get_govinfo_key())
 #' gpo_published(
 #'   start_date = "2024-01-01",
 #'   end_date = "2024-01-03",
 #'   collection = c("BILLS")
 #' )
+#'
 gpo_published <-
   function(start_date,
            end_date = NULL,
