@@ -1,3 +1,3 @@
-# govinfoR (development version)
+# govinfoR 0.0.1
 
 * Initial CRAN submission.
