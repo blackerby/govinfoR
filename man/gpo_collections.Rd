@@ -41,6 +41,8 @@ gpo_collections(
 
 \item{court_type}{\code{USCOURTS} collection specific.}
 
+\item{state}{Collection specific.}
+
 \item{topic}{Collection specific.}
 
 \item{is_glp}{Collection specific.}
@@ -64,7 +66,7 @@ descriptions are adapted from \href{https://api.govinfo.gov/docs/}{GovInfo API d
 Calling \code{gpo_collections()} without specifying a collection returns metadata about all collections.
 }
 \examples{
-set_govinfo_key("DEMO_KEY")
+set_govinfo_key(get_govinfo_key())
 gpo_collections(collection = "BILLS", start_date = yesterday())
 gpo_collections()
 }

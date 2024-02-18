@@ -2,7 +2,7 @@ Package: govinfoR
 Title: An api.govinfo.gov wrapper
 Version: 0.0.0.9000
 Authors@R: 
-    person("William", "Blackerby", , "wmblackerby@gmail.com", role = c("aut", "cre"))
+    person("William", "Blackerby", , "wmblackerby@gmail.com", role = c("aut", "cre", "cph"))
 Description: govinfoR provides functions for accessing data provied by the United States Goverment Publishing Office
     GovInfo API.
 License: MIT + file LICENSE
@@ -15,7 +15,7 @@ Imports:
     httr2,
     janitor,
     lubridate,
-    tidyr,
-    vctrs
+    stringr,
+    tidyr
 URL: https://github.com/blackerby/govinfoR
 BugReports: https://github.com/blackerby/govinfoR/issues

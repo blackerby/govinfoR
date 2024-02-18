@@ -11,6 +11,7 @@
 #' @param end_date ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z')
 #'    Example: 2018-01-28T20:18:10Z
 #' @param page_size The number of records to return for a given request.
+#' @param collection Filter by GPO collection.
 #' @param congress Filter by Congress, e.g., 116, 117
 #' @param doc_class Filter by collection-specific categories, which vary among collections.
 #' @param modified_since Request only packages modified since a given date/time.
@@ -30,11 +31,11 @@
 #' @export
 #'
 #' @examples
-#' set_govinfo_key("DEMO_KEY")
+#' set_govinfo_key(get_govinfo_key())
 #' gpo_published(
 #'   start_date = "2024-01-01",
 #'   end_date = "2024-01-03",
-#'   collection = c("BILLS", "BILLSTATUS")
+#'   collection = c("BILLS")
 #' )
 gpo_published <-
   function(start_date,

@@ -16,6 +16,7 @@
 #' @param bill_version Specific to the `BILLS` collection. Filter by bill text version code.
 #' @param court_code `USCOURTS`collection specific.
 #' @param court_type `USCOURTS` collection specific.
+#' @param state Collection specific.
 #' @param topic Collection specific.
 #' @param is_glp Collection specific.
 #' @param nature_suit_code Collection specific.
@@ -26,7 +27,7 @@
 #' @export
 #'
 #' @examples
-#' set_govinfo_key("DEMO_KEY")
+#' set_govinfo_key(get_govinfo_key())
 #' gpo_collections(collection = "BILLS", start_date = yesterday())
 #' gpo_collections()
 gpo_collections <-

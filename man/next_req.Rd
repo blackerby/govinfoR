@@ -6,6 +6,11 @@
 \usage{
 next_req(resp, req)
 }
+\arguments{
+\item{resp}{Callback response.}
+
+\item{req}{Callback response.}
+}
 \description{
 A callback for use with httr2::req_perform_iterative
 }

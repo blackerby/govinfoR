@@ -35,6 +35,6 @@ is supported instead. Parameter descriptions are adapted from
 \href{https://api.govinfo.gov/docs/}{GovInfo API documentation}.
 }
 \examples{
-set_govinfo_key("DEMO_KEY")
+set_govinfo_key(get_govinfo_key())
 gpo_package_granules("CREC-2018-01-04")
 }

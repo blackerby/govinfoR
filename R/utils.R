@@ -44,7 +44,8 @@ tomorrow <- function() {
 #'
 #' A callback for use with httr2::req_perform_iterative
 #'
-#'
+#' @param resp Callback response.
+#' @param req Callback response.
 next_req <- function(resp, req) {
   body <- httr2::resp_body_json(resp)
   next_url <- body$nextPage
@@ -54,3 +55,23 @@ next_req <- function(resp, req) {
   httr2::request(next_url) |>
     httr2::req_headers(`X-Api-Key` = get_govinfo_key())
 }
+
+# Addressing global variable note from running `devtools::check()`
+# https://community.rstudio.com/t/how-to-solve-no-visible-binding-for-global-variable-note/28887
+utils::globalVariables(
+  c(
+    "json",
+    "date_issued",
+    "download",
+    "granule_class",
+    "sub_granule_class",
+    "doc_class",
+    "last_modified",
+    "granule_date",
+    "otherIdentifier",
+    "date_issued",
+    "bill_version",
+    "bill_version_label",
+    "collection_code"
+  )
+)

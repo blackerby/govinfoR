@@ -18,6 +18,6 @@ A single row tibble
 Given a package id and a granule id, return a metadata summary for the granule.
 }
 \examples{
-set_govinfo_key("DEMO_KEY")
+set_govinfo_key(get_govinfo_key())
 gpo_package_granules_summary("CREC-2018-01-04", "CREC-2018-01-04-pt1-PgD7-2")
 }

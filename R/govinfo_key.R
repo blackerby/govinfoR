@@ -58,7 +58,7 @@ set_govinfo_key <-
       lines <- readLines(r_env)
       newline <- paste0(name, " = ", key)
 
-      already_exists <- string::str_detect(lines, paste0(name, " ="))
+      already_exists <- stringr::str_detect(lines, paste0(name, " ="))
 
       if (any(exists)) {
         if (sum(exists) > 1) {

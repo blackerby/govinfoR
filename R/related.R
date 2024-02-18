@@ -10,7 +10,7 @@
 #' @export
 #'
 #' @examples
-#' set_govinfo_key("DEMO_KEY")
+#' set_govinfo_key(get_govinfo_key())
 #' gpo_related("BILLS-116hr748enr")
 #' gpo_related("BILLS-116hr748enr", collection = "BILLS")
 gpo_related <-
