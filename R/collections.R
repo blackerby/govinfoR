@@ -1,9 +1,9 @@
 #' Retrieve GPO collections data
 #'
-#' The following params correspond to those listed in the [GovInfo API documentation](https://api.govinfo.gov),
+#' The following params correspond to those listed in the [GovInfo](https://www.govinfo.gov/) API documentation],
 #' but the `offset` param is not supported. GovInfo documentation indicates that it was to be deprecated in December,
 #' 2022, and though it is still available through the API, the `offsetMark` parameter is supported instead. Parameter
-#' descriptions are adapted from [GovInfo API documentation](https://api.govinfo.gov).
+#' descriptions are adapted from [GovInfo](https://www.govinfo.gov/) API documentation.
 #'
 #' Calling `gpo_collections()` without specifying a collection returns metadata about all collections.
 #'

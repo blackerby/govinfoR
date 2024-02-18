@@ -32,7 +32,7 @@ A tibble
 The \code{offset} param provide by the API is not supported. GovInfo documentation indicates that it was to
 be deprecated in December, 2022, and though it is still available through the API, the \code{offsetMark} parameter
 is supported instead. Parameter descriptions are adapted from
-\href{https://api.govinfo.gov}{GovInfo API documentation}.
+\href{https://www.govinfo.gov/}{GovInfo} API documentation.
 }
 \examples{
 \dontshow{if (govinfoR::has_govinfo_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}

@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-`govinfoR` offers an easy way to access data provided by the [United States Government Publishing Office (GPO) GovInfo API](https://api.govinfo.gov) in R. It's currently in early development, but functions for all GET endpoints are available. The API's `search` endpoint, which as of this writing is in Public Preview, is outside the scope of this package at present.
+`govinfoR` offers an easy way to access data provided by the [United States Government Publishing Office (GPO) GovInfo](https://www.govinfo.gov/) API in R. It's currently in early development, but functions for all GET endpoints are available. The API's `search` endpoint, which as of this writing is in Public Preview, is outside the scope of this package at present.
 
 ## Installation
 

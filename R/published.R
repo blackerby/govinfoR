@@ -1,10 +1,10 @@
 #' Retrieve documents based on official publication date.
 #'
 #' The following params correspond to those listed in the
-#' [GovInfo API documentation](https://api.govinfo.gov), but the `offset` param is not
+#' [GovInfo](https://www.govinfo.gov/) API documentation, but the `offset` param is not
 #' supported. GovInfo documentation indicates that it was to be deprecated in December, 2022, and
 #' though it is still available through the API, the `offsetMark` parameter is supported instead.
-#' Parameter descriptions are adapted from [GovInfo API documentation](https://api.govinfo.gov).
+#' Parameter descriptions are adapted from [GovInfo](https://www.govinfo.gov/) API documentation.
 #'
 #' @param start_date ISO8601 date and time formatted string (yyyy-MM-dd'T'HH:mm:ss'Z')
 #'    Example: 2018-01-28T20:18:10Z

@@ -65,10 +65,10 @@ A tibble
 }
 \description{
 The following params correspond to those listed in the
-\href{https://api.govinfo.gov}{GovInfo API documentation}, but the \code{offset} param is not
+\href{https://www.govinfo.gov/}{GovInfo} API documentation, but the \code{offset} param is not
 supported. GovInfo documentation indicates that it was to be deprecated in December, 2022, and
 though it is still available through the API, the \code{offsetMark} parameter is supported instead.
-Parameter descriptions are adapted from \href{https://api.govinfo.gov}{GovInfo API documentation}.
+Parameter descriptions are adapted from \href{https://www.govinfo.gov/}{GovInfo} API documentation.
 }
 \examples{
 \dontshow{if (govinfoR::has_govinfo_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}

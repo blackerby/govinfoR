@@ -34,7 +34,7 @@ gpo_package_summary <- function(package_id) {
 #' The `offset` param provide by the API is not supported. GovInfo documentation indicates that it was to
 #' be deprecated in December, 2022, and though it is still available through the API, the `offsetMark` parameter
 #' is supported instead. Parameter descriptions are adapted from
-#' [GovInfo API documentation](https://api.govinfo.gov).
+#' [GovInfo](https://www.govinfo.gov/) API documentation.
 #'
 #' @param package_id String. The Package Id. Ex: CREC-2018-01-04
 #' @param page_size Integer. The number of records to retrieve per request. Defaults to 20.
