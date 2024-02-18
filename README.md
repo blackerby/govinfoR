@@ -15,7 +15,14 @@ is outside the scope of this package at present.
 
 ## Installation
 
-You can install the development version of govinfoR from
+You can install the stable version of `govinfoR` from
+[CRAN](https://cran.r-project.org/package=govinfoR) with:
+
+``` r
+install.packages("govinfoR")
+```
+
+You can install the development version of `govinfoR` from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -31,7 +38,7 @@ metadata about all 39 GovInfo collections.
 ``` r
 library(govinfoR)
 
-set_govinfo_key("DEMO_KEY")
+set_govinfo_key(get_govinfo_key())
 
 gpo_collections()
 #> # A tibble: 39 × 4
@@ -59,8 +66,8 @@ collection since midnight yesterday.
 
 ``` r
 gpo_collections(collection = "BILLS", start_date = yesterday())
-#> ⠙ Iterating 5 done (2.4/s) | 2.1s
-#> ⠙ Iterating 8 done (2.4/s) | 3.3s
+#> ⠙ Iterating 5 done (2.2/s) | 2.3s
+#> ⠙ Iterating 8 done (2.2/s) | 3.6s
 #> # A tibble: 87 × 7
 #>    package_id          last_modified       package_link doc_class title congress
 #>    <chr>               <dttm>              <chr>        <fct>     <chr>    <int>

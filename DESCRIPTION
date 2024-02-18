@@ -1,10 +1,9 @@
 Package: govinfoR
-Title: An api.govinfo.gov wrapper
+Title: A GovInfo API wrapper
 Version: 0.0.0.9000
 Authors@R: 
     person("William", "Blackerby", , "wmblackerby@gmail.com", role = c("aut", "cre", "cph"))
-Description: govinfoR provides functions for accessing data provied by the United States Goverment Publishing Office
-    GovInfo API.
+Description: Access data provided by the United States Goverment Publishing Office (GPO) GovInfo API.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

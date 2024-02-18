@@ -22,7 +22,13 @@ knitr::opts_chunk$set(
 
 ## Installation
 
-You can install the development version of govinfoR from [GitHub](https://github.com/) with:
+You can install the stable version of `govinfoR` from [CRAN](https://cran.r-project.org/package=govinfoR) with:
+
+``` r
+install.packages("govinfoR")
+```
+
+You can install the development version of `govinfoR` from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
