@@ -1,6 +1,6 @@
 Package: govinfoR
 Title: A 'GovInfo' API Wrapper
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: 
     person("William", "Blackerby", , "wmblackerby@gmail.com", role = c("aut", "cre", "cph"))
 Description: Access data provided by the United States Government Publishing Office (GPO) 'GovInfo' API (<https://github.com/usgpo/api>).

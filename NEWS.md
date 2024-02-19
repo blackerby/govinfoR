@@ -1,3 +1,5 @@
+# govinfoR 0.0.3
+
 # govinfoR 0.0.2
 
 * CRAN re-submission.
