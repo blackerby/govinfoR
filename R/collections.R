@@ -28,8 +28,7 @@
 #'
 #' @examplesIf govinfoR::has_govinfo_key()
 #'
-#' set_govinfo_key(get_govinfo_key())
-#' gpo_collections(collection = "BILLS", start_date = yesterday())
+#' gpo_collections(collection = "BILLS", start_date = "2024-02-17T00:00:00Z")
 #' gpo_collections()
 #'
 gpo_collections <-

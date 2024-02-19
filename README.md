@@ -38,8 +38,6 @@ environment), and gets metadata about all 39 GovInfo collections.
 ``` r
 library(govinfoR)
 
-set_govinfo_key(get_govinfo_key())
-
 gpo_collections()
 #> # A tibble: 39 × 4
 #>    collection_code collection_name                  package_count granule_count
@@ -65,8 +63,8 @@ collection since midnight yesterday.
 > `tomorrow()`)
 
 ``` r
-gpo_collections(collection = "BILLS", start_date = yesterday())
-#> # A tibble: 87 × 7
+gpo_collections(collection = "BILLS", start_date = "2024-02-17T00:00:00Z")
+#> # A tibble: 29 × 7
 #>    package_id          last_modified       package_link doc_class title congress
 #>    <chr>               <dttm>              <chr>        <fct>     <chr>    <int>
 #>  1 BILLS-118hr7278ih   2024-02-17 05:46:41 https://api… hr        Hous…      118
@@ -79,7 +77,7 @@ gpo_collections(collection = "BILLS", start_date = yesterday())
 #>  8 BILLS-118hr7274ih   2024-02-17 05:46:25 https://api… hr        Conn…      118
 #>  9 BILLS-118hr6544rh   2024-02-17 05:44:35 https://api… hr        Atom…      118
 #> 10 BILLS-118hres1021ih 2024-02-17 05:44:30 https://api… hres      Prov…      118
-#> # ℹ 77 more rows
+#> # ℹ 19 more rows
 #> # ℹ 1 more variable: date_issued <date>
 ```
 

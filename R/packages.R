@@ -7,7 +7,6 @@
 #'
 #' @examplesIf govinfoR::has_govinfo_key()
 #'
-#' set_govinfo_key(get_govinfo_key())
 #' gpo_package_summary("CREC-2018-01-04")
 #'
 gpo_package_summary <- function(package_id) {
@@ -49,7 +48,6 @@ gpo_package_summary <- function(package_id) {
 #'
 #' @examplesIf govinfoR::has_govinfo_key()
 #'
-#' set_govinfo_key(get_govinfo_key())
 #' gpo_package_granules("CREC-2018-01-04")
 #'
 gpo_package_granules <-
@@ -107,7 +105,6 @@ gpo_package_granules <-
 #'
 #' @examplesIf govinfoR::has_govinfo_key()
 #'
-#' set_govinfo_key(get_govinfo_key())
 #' gpo_package_granules_summary("CREC-2018-01-04", "CREC-2018-01-04-pt1-PgD7-2")
 #'
 gpo_package_granules_summary <- function(package_id, granule_id) {

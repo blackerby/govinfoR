@@ -15,7 +15,7 @@ logical if \code{has}, key if \code{get}
 }
 \description{
 Adapted, with gratitude, from Christopher Kenny's
-\href{https://github.com/christopherkenny/congress/blob/201e3a5ae3b28772ff409f9fa36a04c5efa749ce/R/congress_key.R}{congress}
+\href{https://github.com/christopherkenny/congress/blob/main/R/congress_key.R}{congress}
 package
 }
 \examples{

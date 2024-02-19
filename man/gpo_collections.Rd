@@ -68,8 +68,7 @@ Calling \code{gpo_collections()} without specifying a collection returns metadat
 \examples{
 \dontshow{if (govinfoR::has_govinfo_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 
-set_govinfo_key(get_govinfo_key())
-gpo_collections(collection = "BILLS", start_date = yesterday())
+gpo_collections(collection = "BILLS", start_date = "2024-02-17T00:00:00Z")
 gpo_collections()
 \dontshow{\}) # examplesIf}
 }

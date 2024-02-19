@@ -1,7 +1,7 @@
 #' Check or Get GovInfo API Key
 #'
 #' Adapted, with gratitude, from Christopher Kenny's
-#' [congress](https://github.com/christopherkenny/congress/blob/201e3a5ae3b28772ff409f9fa36a04c5efa749ce/R/congress_key.R)
+#' [congress](https://github.com/christopherkenny/congress/blob/main/R/congress_key.R)
 #' package
 #'
 #' @return logical if `has`, key if `get`
@@ -63,7 +63,7 @@ set_govinfo_key <-
       if (any(exists)) {
         if (sum(exists) > 1) {
           cli::cli_abort(
-            "Multiple entries in .Renviron found.\nEdit manually with {.fn usethis::edit_r_environ."
+            "Multiple entries in .Renviron found.\nEdit manually with {.fn usethis::edit_r_environ}."
           )
         }
 

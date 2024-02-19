@@ -30,7 +30,6 @@ gpo_related()
 \examples{
 \dontshow{if (govinfoR::has_govinfo_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 
-set_govinfo_key(get_govinfo_key())
 gpo_related("BILLS-116hr748enr")
 gpo_related("BILLS-116hr748enr", collection = "BILLS")
 \dontshow{\}) # examplesIf}

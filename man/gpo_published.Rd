@@ -73,7 +73,6 @@ Parameter descriptions are adapted from \href{https://www.govinfo.gov/}{GovInfo}
 \examples{
 \dontshow{if (govinfoR::has_govinfo_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 
-set_govinfo_key(get_govinfo_key())
 gpo_published(
   start_date = "2024-01-01",
   end_date = "2024-01-03",
