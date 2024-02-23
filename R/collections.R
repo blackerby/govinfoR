@@ -23,7 +23,7 @@
 #' @param nature_suit Collection specific.
 #' @param offset_mark Indicates starting record for a given request.
 #'
-#' @return A tibble
+#' @return A tibble or NULL if no data is in the API payload.
 #' @export
 #'
 #' @examplesIf govinfoR::has_govinfo_key()
@@ -90,18 +90,24 @@ gpo_collections <-
 
       df <- dplyr::bind_rows(first_n, remaining_n)
     } else {
-      df <- tidyr::tibble(json = body$collections) |> tidyr::unnest_wider(json)
+      df <- tidyr::tibble(json = body$collections)
+
+      if ("json" %in% names(df)) {
+        tidyr::unnest_wider(json)
+      }
     }
 
     if (!is.null(collection)) {
-      df |>
-        janitor::clean_names() |>
-        dplyr::mutate(
-          last_modified = lubridate::ymd_hms(last_modified),
-          doc_class = as.factor(doc_class),
-          congress = as.integer(congress),
-          date_issued = as.Date(date_issued)
-        )
+      if (nrow(df) > 0) {
+        df |>
+          janitor::clean_names() |>
+          dplyr::mutate(
+            last_modified = lubridate::ymd_hms(last_modified),
+            doc_class = as.factor(doc_class),
+            congress = as.integer(congress),
+            date_issued = as.Date(date_issued)
+          )
+      }
     } else {
       df |>
         janitor::clean_names()
