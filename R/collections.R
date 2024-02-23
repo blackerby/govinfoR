@@ -35,7 +35,7 @@ gpo_collections <-
   function(collection = NULL,
            start_date = NULL,
            end_date = NULL,
-           page_size = 10,
+           page_size = 100,
            doc_class = NULL,
            congress = NULL,
            bill_version = NULL,
@@ -90,10 +90,14 @@ gpo_collections <-
 
       df <- dplyr::bind_rows(first_n, remaining_n)
     } else {
-      df <- tidyr::tibble(json = body$collections)
+      df <- if (is.null(collection)) {
+        tidyr::tibble(json = body$collections)
+      } else {
+        tidyr::tibble(json = body$packages)
+      }
 
       if ("json" %in% names(df)) {
-        tidyr::unnest_wider(json)
+        df <- tidyr::unnest_wider(df, json)
       }
     }
 
